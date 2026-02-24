@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Pantalla 2 - Spotify</title>
+  <link rel="stylesheet" href="player.css" />
+</head>
+<body>
+  <main class="stage">
+
+    <!-- Arriba izquierda: cartel de la canción -->
+    <aside class="spotifyBox" aria-label="Spotify player">
+      <p class="spotifyTitle">Algo contigo — Vicentico</p>
+      <iframe
+        class="spotifyFrame"
+        src="https://open.spotify.com/embed/track/4zsDA31stWMtLveU61hejd"
+        frameborder="0"
+        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+        loading="lazy">
+      </iframe>
+    </aside>
+
+    <!-- Centro: texto grande -->
+    <section class="centerArea" aria-label="Texto central">
+      <div class="centerText">
+        Esta canción me lleva a cuando éramos solo amigos… y aun así yo ya me moría por estar cerca tuyo. No era por tener algo, era por vos.
+        Hoy estamos juntos, pero mi corazón sigue queriendo más... más momentos, más experiencias, más historias con vos.
+        No te miento si te digo que me sigo muriendo de ganas de tener mas cosas con vos.
+        Te amo, mi amor.
+      </div>
+
+      <button id="back" class="btn secondary" type="button">Volver</button>
+    </section>
+
+  </main>
+
+  <script src="player.js"></script>
+</body>
+</html>
+
+
+

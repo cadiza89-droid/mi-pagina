@@ -1,0 +1,110 @@
+:root{
+  --bg:#0b1020;
+  --text:#e9ecf1;
+  --muted:#a9b1c6;
+  --border:rgba(255,255,255,.12);
+}
+
+*{ box-sizing:border-box; }
+body{
+  margin:0;
+  font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+  background: radial-gradient(1200px 600px at 50% 0%, #1a2b66 0%, var(--bg) 55%);
+  color:var(--text);
+  min-height:100vh;
+}
+
+/* Contenedor principal */
+.stage{
+  position:relative;
+  min-height:100vh;
+  padding:16px;
+}
+
+/* Caja del spotify: arriba izquierda en compu */
+.spotifyBox{
+  position:absolute;
+  top:16px;
+  left:16px;
+  width: min(360px, 92vw);
+  background: rgba(17,26,51,.85);
+  border:1px solid var(--border);
+  border-radius:16px;
+  padding:12px;
+  box-shadow:0 12px 35px rgba(0,0,0,.35);
+}
+
+.spotifyTitle{
+  margin:0 0 10px 0;
+  font-size:9px;
+  color:var(--muted);
+}
+
+/* El iframe responsive */
+.spotifyFrame{
+  width:100%;
+  height:152px;
+  border-radius:12px;
+}
+
+/* Área central: centrado perfecto */
+.centerArea{
+  min-height:100vh;
+  display:grid;
+  place-items:center;
+  gap:16px;
+  padding: 24px;
+}
+
+/* Texto grande centrado (escala según pantalla) */
+.centerText{
+  text-align:center;
+  font-weight:800;
+  letter-spacing:0.4px;
+  line-height:1.25;
+  font-size: 30px;
+  max-width: 16ch;
+}
+
+/* Botones */
+.btn{
+  padding:12px 16px;
+  border:0;
+  border-radius:12px;
+  cursor:pointer;
+  font-weight:700;
+  font-size:16px;
+}
+
+.secondary{
+  background: rgba(255,255,255,.12);
+  color: var(--text);
+}
+
+/* 📱 En celular: el Spotify pasa arriba pero “en flujo” (no tapa el texto) */
+@media (max-width: 700px){
+  .spotifyBox{
+    position:static;      /* deja de ser absoluto */
+    width:100%;
+    max-width: 520px;
+    margin: 0 auto 18px;  /* arriba del texto */
+  }
+
+  .centerArea{
+    min-height: auto;
+    padding-top: 0;
+    padding-bottom: 28px;
+  }
+
+  .stage{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap: 6px;
+  }
+
+  .centerText{
+    max-width: 22ch;
+  }
+}
+
